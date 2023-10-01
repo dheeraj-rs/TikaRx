@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "calibri-bold";
+    src: url(../public/calibri-bold.ttf);
+}
+
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "calibri-bold";
+}
+
+
+button {
+    position: relative;
+    padding: 1em 2em;
+    border: 1px;
+    font-weight: 500;
+    color: #fff;
+    z-index: 2;
+}
+
+button::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    border-radius: 20px;
+    background-image: conic-gradient(#be980f,
+            #488cfb,
+            #488cfb,
+            #488cfb,
+            #ff9f0e,
+            #ff9f0e);
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    -webkit-mask-composite: destination-out;
+}
+
+.border-style {
+    -webkit-border-radius: 100px 0 105px 105px;
+    /*Safari, Chrome*/
+    -moz-border-radius: 100px 0 105px 105px;
+    /*Firefox*/
+    border-radius: 100px 0 105px 105px;
+}
